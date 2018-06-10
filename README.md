@@ -1,5 +1,5 @@
 # lelev
-Invada Qualquer Linux Com Um Pendrive.
+Obtenha privilégios de root com este simples script.
 
 Usage:
 
